@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+// import { todoList } from './actions';
+// import { bindActionCreators } from 'redux';
 class Tasks extends Component {
+
   render() {
-    if (this.props.taskName === null) {
-      return (<h2>add tasks</h2>);
-    }
+    console.log(this.props);
+
     return (
         <div className="Tasks">
           <ul>
-            <li>Task:{this.props.taskName}</li>
-            <li>TaskState:{this.props.taskState}</li>
+              {this.props.todos.map((todo) => {
+                return (
+                  <h1>{todo.taskName}</h1>
+                );
+              })}
           </ul>
         </div>
     );
+  }
+}
+// state refers to redux state object
+// mapping
+const mapStateToProps = (state) => {
+  return {
+    todos: state.todos,
   };
 };
 
-const mapStateToProps = (state) => {
-  return {
-    taskName: state.taskState,
-  };
-};
+
 
 export default connect(mapStateToProps)(Tasks);
