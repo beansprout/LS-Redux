@@ -10,9 +10,9 @@ class Tasks extends Component {
     return (
         <div className="Tasks">
           <ul>
-              {this.props.todos.map((todo) => {
+              {this.props.todos.map((todo, i) => {
                 return (
-                  <h1>{todo.taskName}</h1>
+                  <li key={i}>{todo.taskName}</li>
                 );
               })}
           </ul>
@@ -31,3 +31,8 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps)(Tasks);
+/*
+mapStateToProps means
+this = state object
+take props on state object 'todos'
+*/
