@@ -1,11 +1,18 @@
-//Action Creator Extraordinaire
+//this file = action creator
 
-//events?
+// each function created in here is called an action
 
-export const todoList = (task) => {
-  console.log('looky:', task);
+//action
+//specify a type so in reducer we can test for type
+//takes object from type ADD_TODO
+//payload of
+export const addItem = (input) => {
+  // console.log('>>>', taskInput);
   return {
-    type: 'TODOS',
-    payload: task,
+    type: 'ADD_TODO',
+    payload: addItem,
   };
 };
+
+
+

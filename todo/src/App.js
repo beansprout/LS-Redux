@@ -6,10 +6,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Tasks />
+          <Tasks />
       </div>
     );
   }
 }
 
 export default App;
+
